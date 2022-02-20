@@ -1,0 +1,117 @@
+:root {
+  --font-sans: Arial, "Hiragino Sans GB", "Microsoft Yahei", "微软雅黑",
+    sans-serif;
+  --font-serif: "Roboto", Georgia, "Times New Roman", Times, "SimSun", "宋体",
+    serif;
+}
+
+body {
+  font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.calendar-container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1rem 0.5rem 1rem 1.5rem;
+  width: 100vw;
+  position: relative;
+  font-family: var(--font-serif);
+}
+
+.cal-header {
+  flex: 1 100%;
+  font-size: 2rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 0.7rem;
+  text-transform: uppercase;
+}
+
+.cal-body {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.cal-month,
+.cal-day {
+  font-family: var(--font-serif);
+  margin: 0.5rem;
+  padding: 0.3rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.cal-month {
+  font-weight: bold;
+}
+
+.past {
+  border-radius: 100%;
+  background: black;
+}
+
+.cal-footer {
+  margin-right: 1.4rem;
+  font-size: 0.8rem;
+  flex: 1 100%;
+  text-align: right;
+}
+
+.today {
+  position: relative;
+  background-color: #fff;
+}
+.today:after {
+  border: 0.25em solid red;
+  border-top: none;
+  border-radius: 1.5em 1em 2em 1.5em;
+  bottom: -0.3em;
+  content: "";
+  left: -0.3em;
+  position: absolute;
+  right: -0.3em;
+  top: -0.1em;
+}
+.today:before {
+  border-radius: 0.5em;
+  content: "";
+  height: 1em;
+  left: 0;
+  position: absolute;
+  top: -0.3em;
+  transform: rotate(-10deg);
+  width: 2em;
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 10px;
+  }
+  .calendar-container {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .cal-header {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .cal-month,
+  .cal-day {
+    margin: 5px;
+    padding: 3px;
+  }
+}
